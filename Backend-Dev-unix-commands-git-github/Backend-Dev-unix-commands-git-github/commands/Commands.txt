@@ -1,0 +1,187 @@
+**File and Directory Commands**
+
+| Command | Purpose                  |
+| ------- | ------------------------ |
+| `ls`    | List files               |
+| `pwd`   | Show current directory   |
+| `cd`    | Change directory         |
+| `mkdir` | Create directory         |
+| `rmdir` | Delete empty directory   |
+| `touch` | Create empty file        |
+| `cp`    | Copy files/directories   |
+| `mv`    | Move / rename            |
+| `rm`    | Delete files/directories |
+| `tree`  | Directory structure      |
+| `stat`  | File details             |
+| `file`  | File type                |
+
+
+
+
+**File viewing and Text display**
+
+| Command | Purpose                |
+| ------- | ---------------------- |
+| `cat`   | Display file           |
+| `tac`   | Reverse display        |
+| `less`  | Scroll file            |
+| `more`  | Paginated view         |
+| `head`  | First lines            |
+| `tail`  | Last lines             |
+| `watch` | Run command repeatedly |
+
+
+
+
+**Text Processing**
+
+| Command | Purpose              |
+| ------- | -------------------- |
+| `grep`  | Search text          |
+| `egrep` | Extended grep        |
+| `fgrep` | Fixed grep           |
+| `sed`   | Stream editor        |
+| `awk`   | Pattern scanning     |
+| `sort`  | Sort text            |
+| `uniq`  | Remove duplicates    |
+| `wc`    | Word/line count      |
+| `cut`   | Extract columns      |
+| `paste` | Merge files          |
+| `tr`    | Translate characters |
+| `nl`    | Number lines         |
+| `fold`  | Line wrapping        |
+
+
+
+**File Permissions & Ownership**
+
+| Command   | Purpose             |
+| --------- | ------------------- |
+| `chmod`   | Change permissions  |
+| `chown`   | Change owner        |
+| `chgrp`   | Change group        |
+| `umask`   | Default permissions |
+| `getfacl` | Get ACL             |
+| `setfacl` | Set ACL             |
+
+
+
+**Process Management**
+
+| Command   | Purpose           |
+| --------- | ----------------- |
+| `ps`      | Process status    |
+| `top`     | Live processes    |
+| `htop`    | Enhanced top      |
+| `kill`    | Kill process      |
+| `killall` | Kill by name      |
+| `nice`    | Set priority      |
+| `renice`  | Change priority   |
+| `bg`      | Resume background |
+| `fg`      | Resume foreground |
+| `jobs`    | Active jobs       |
+| `watch`   | Monitor commands  |
+
+
+
+**Disk and storage Commands**
+
+| Command  | Purpose           |
+| -------- | ----------------- |
+| `df`     | Disk usage        |
+| `du`     | Directory size    |
+| `mount`  | Mount filesystem  |
+| `umount` | Unmount           |
+| `lsblk`  | Block devices     |
+| `blkid`  | Device info       |
+| `fsck`   | File system check |
+
+
+
+**Networking Commands**
+
+| Command      | Purpose            |
+| ------------ | ------------------ |
+| `ping`       | Network check      |
+| `ifconfig`   | Interface config   |
+| `ip`         | Network config     |
+| `netstat`    | Network stats      |
+| `ss`         | Socket stats       |
+| `traceroute` | Route trace        |
+| `nslookup`   | DNS lookup         |
+| `curl`       | API / URL requests |
+| `wget`       | Download files     |
+| `ftp`        | File transfer      |
+| `scp`        | Secure copy        |
+| `ssh`        | Secure login       |
+
+
+
+**Compression and Archiving**
+
+| Command  | Purpose       |
+| -------- | ------------- |
+| `tar`    | Archive files |
+| `gzip`   | Compress      |
+| `gunzip` | Decompress    |
+| `zip`    | Zip files     |
+| `unzip`  | Extract zip   |
+| `bzip2`  | Compress      |
+| `xz`     | Compress      |
+
+
+
+**System Information**
+
+| Command    | Purpose         |
+| ---------- | --------------- |
+| `uname`    | OS info         |
+| `hostname` | System name     |
+| `uptime`   | System runtime  |
+| `whoami`   | Current user    |
+| `who`      | Logged-in users |
+| `id`       | User ID         |
+| `free`     | Memory          |
+| `vmstat`   | Memory stats    |
+| `iostat`   | CPU stats       |
+| `lscpu`    | CPU info        |
+| `lsusb`    | USB devices     |
+| `lspci`    | PCI devices     |
+
+
+**Shell Environment**
+
+| Command   | Purpose               |
+| --------- | --------------------- |
+| `echo`    | Print output          |
+| `env`     | Environment variables |
+| `export`  | Set env var           |
+| `set`     | Shell variables       |
+| `alias`   | Create shortcut       |
+| `unalias` | Remove shortcut       |
+| `history` | Command history       |
+| `source`  | Execute file          |
+| `clear`   | Clear terminal        |
+
+
+
+**Vi/Nano Editor**
+
+| Command      | Purpose       |
+| ------------ | ------------- |
+| `vi` / `vim` | Text editor   |
+| `nano`       | Simple editor |
+| `ed`         | Line editor   |
+
+
+
+**Redirection and Pipes**
+
+| Symbol | Meaning         |      |
+| ------ | --------------- | ---- |
+| `>`    | Output redirect |      |
+| `>>`   | Append          |      |
+| `<`    | Input redirect  |      |
+| `      | `               | Pipe |
+| `2>`   | Error redirect  |      |
+| `&>`   | All output      |      |
