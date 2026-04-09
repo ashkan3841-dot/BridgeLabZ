@@ -1,0 +1,119 @@
+Answers for Introduction Databases-SQL&MongoDB.pdf
+First QUestion
+1. Online Banking System → SQL (Relational DB)
+Requires strong consistency (ACID properties)
+Handles transactions (money transfer, balance updates)
+Needs data integrity & relationships (accounts, users, transactions)
+
+2. Social Media Platform → NoSQL (Document DB)
+Handles huge, unstructured data (posts, comments, likes)
+Needs high scalability (millions of users)
+Flexible schema (user profiles, posts vary)
+
+3. Real-time Chat Application → NoSQL (Key-Value / Document DB)
+Requires low latency & fast reads/writes
+Handles real-time messaging
+Schema is simple and flexible (messages, timestamps)
+
+4. Hospital Patient Records → SQL (Relational DB)
+Needs high accuracy & consistency
+Structured data (patients, doctors, prescriptions)
+Requires secure transactions & relationships
+
+5. IoT Sensor Data Collection → NoSQL (Time-Series / Wide-Column DB)
+Handles massive, continuous data streams
+Needs high write throughput
+Flexible schema (different sensors, formats)
+
+Second Question
+
+Consistency (C): all nodes see same data
+Availability (A): system always responds
+Partition Tolerance (P): system works despite network failures
+In real systems, P is almost always required, so trade-off is usually between C vs A
+1. Stock Trading Platform → CP (Consistency + Partition Tolerance)
+Accuracy is critical (no wrong trades, balances must match)
+If partition happens → better to reject/delay requests than give wrong data
+ Prioritizes Consistency over Availability
+2. Content Delivery Network (CDN) → AP (Availability + Partition Tolerance)
+ Users should always get content (even if slightly outdated)
+Temporary inconsistency (old version of page/image) is acceptable
+ Prioritizes Availability over Consistency
+3. Airline Booking System → CP (Consistency + Partition Tolerance)
+ Must avoid double booking seats
+If partition occurs → system may block booking temporarily
+ Strong Consistency required
+4. Video Streaming Service → AP (Availability + Partition Tolerance)
+ Continuous playback is more important than perfect accuracy
+Slight inconsistencies (buffering, delayed sync, recommendations) are okay
+ Focus on Availability
+
+Third Question
+1. Create - db.createCollection("library")
+	    db.library.insertOne({book: "python",author: "Someone", borrowedBy: "them"})
+2. find by Author - db.library.find({author: "Someone"})
+3. Update - db.library.updateOne({book: "python"},{$set:{author:"Me"}})
+4. tracking - db.books.find({ borrowedBy: "user123" });
+
+Forth Question
+{
+  orderId: 12345,                      // Number (int)
+  orderDate: ISODate("2024-01-15T00:00:00Z"),  // Date
+  totalAmount: NumberDecimal("99.99"), // Decimal (for money)
+  items: ["item1", "item2"]            // Array (already correct)
+}
+
+
+
+
+Assignment Question
+SQL vs NoSQL databases:
+
+SQL databases are relational and store data in tables with a fixed schema. They support complex queries and joins, and ensure strong consistency using ACID properties. Examples include MySQL and PostgreSQL.
+
+NoSQL databases are non-relational and store data in flexible formats such as documents, key-value pairs, graphs, or wide columns. They allow dynamic schemas and are designed for horizontal scaling and high performance. Examples include MongoDB and Cassandra.
+
+Key differences:
+
+Structure: SQL uses tables; NoSQL uses flexible formats (JSON-like documents, etc.)
+Schema: SQL is fixed; NoSQL is dynamic
+Scaling: SQL scales vertically; NoSQL scales horizontally
+Joins: SQL supports joins; NoSQL generally avoids joins
+CAP Theorem:
+
+The CAP theorem states that a distributed system can provide only two out of the following three properties at the same time:
+
+Consistency: All nodes see the same data at the same time
+Availability: Every request receives a response
+Partition Tolerance: The system continues to function despite network failures
+
+It is not possible to guarantee all three because during a network partition, the system must choose between consistency and availability. If it maintains consistency, it may have to reject requests (losing availability). If it maintains availability, it may return outdated or inconsistent data.
+
+Scenarios where MongoDB is preferred:
+Social media applications: Data structure is dynamic (posts, comments, likes), and MongoDB’s flexible schema handles frequent changes easily.
+Real-time analytics or logging systems: High volume of data is generated quickly, and MongoDB can scale horizontally to handle large datasets.
+E-commerce platforms: Product catalogs may have different attributes for different products, and MongoDB allows storing varied data without a fixed schema.
+Why MongoDB uses BSON instead of JSON:
+
+MongoDB uses BSON (Binary JSON) internally because it is more efficient for storage and processing. BSON supports additional data types such as Date, ObjectId, and Decimal, which JSON does not natively support. It also allows faster encoding and decoding, making database operations more efficient compared to plain text JSON.
+
+MongoDB query:
+
+db.students.find({
+GPA: { $gt: 3.5 },
+course: "CS101"
+});
+
+Answer for MongoDB CRUD Operations.pdf
+
+Practice Questions
+First question in JS files
+Second question - 
+Find all students with GPA between 3.0 and 3.5
+db.students.find({GPA: { $gte: 3.0, $lte: 3.5 }});
+Find students enrolled in more than 5 courses 
+db.students.find({$expr: { $gt: [ { $size: "$courses" }, 5 ] }});
+Get top 10 students by GPA
+db.students.find().sort({ GPA: -1 }).limit(10);
+Count students by city
+db.students.aggregate([{$group: {_id: "$city",count: { $sum: 1 }}}]);
